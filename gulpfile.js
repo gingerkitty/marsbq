@@ -8,6 +8,9 @@ var handlebars = require('gulp-compile-handlebars');
 var rename = require('gulp-rename');
 var less = require('gulp-less');
 var autoprefixer = require('gulp-autoprefixer');
+var browserify = require('browserify');
+var source = require('vinyl-source-stream');
+var buffer = require('vinyl-buffer');
 
 var menu = require('./menu.json');
 
@@ -42,12 +45,19 @@ gulp.task('images', function(){
 
 /* command to watch script files for changes */
 gulp.task('scripts', function(){
-    gulp.src(['src/scripts/main.js'])
-        .pipe(sourcemaps.init())
-        .pipe(uglify())
-        .pipe(sourcemaps.write())
-        .pipe(gulp.dest('dist/scripts'))
-        .pipe(browserSync.stream());
+    var b = browserify({
+      entries: 'src/scripts/main.js',
+      debug: true
+    });
+
+    b.bundle()
+      .pipe(source('main.js'))
+      .pipe(buffer())
+      .pipe(sourcemaps.init({loadMaps:true}))
+      .pipe(uglify())
+      .pipe(sourcemaps.write('./'))
+      .pipe(gulp.dest('dist/scripts'))
+      .pipe(browserSync.stream());      
 })
 
 
