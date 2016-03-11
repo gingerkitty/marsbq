@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "countdown": "^2.6.0",
     "graceful-fs": "^4.1.3",
     "normalize.css": "^3.0.3"
   },
