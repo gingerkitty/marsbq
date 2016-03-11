@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b50986b5-d241-4d7e-b179-5118867e7207" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" />
-    </list>
+    <list default="true" id="b50986b5-d241-4d7e-b179-5118867e7207" name="Default" comment="" />
     <ignored path="marsbq.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -27,8 +25,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.51641315">
-              <caret line="43" column="85" selection-start-line="43" selection-start-column="62" selection-end-line="43" selection-end-column="62" />
+            <state vertical-scroll-proportion="0.8046437">
+              <caret line="67" column="12" selection-start-line="67" selection-start-column="12" selection-end-line="67" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -44,7 +42,6 @@
       <list>
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/src/scripts/main.js" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/styles/main.css" />
         <option value="$PROJECT_DIR$/dist/styles/main.css" />
@@ -67,6 +64,7 @@
         <option value="$PROJECT_DIR$/../../GithubRepos/second-git/README.md" />
         <option value="$PROJECT_DIR$/../../GithubRepos/second-git/.gitignore" />
         <option value="/Library/Preferences/com.box.sync.plist" />
+        <option value="$PROJECT_DIR$/index.html" />
       </list>
     </option>
   </component>
@@ -631,8 +629,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.51641315">
-          <caret line="43" column="85" selection-start-line="43" selection-start-column="62" selection-end-line="43" selection-end-column="62" />
+        <state vertical-scroll-proportion="0.8046437">
+          <caret line="67" column="12" selection-start-line="67" selection-start-column="12" selection-end-line="67" selection-end-column="12" />
           <folding />
         </state>
       </provider>
