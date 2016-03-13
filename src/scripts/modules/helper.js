@@ -11,7 +11,6 @@ var helper = module.exports = {
     for (var i = 0; i < model.menu.length; i++) {
       if (model.menu[i].id === id) {
         model.menuItem = model.menu[i];
-        
       }
     }
   },

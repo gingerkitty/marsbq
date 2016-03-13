@@ -11,11 +11,16 @@ var view = module.exports = {
     var listItem = document.querySelectorAll('#menu li');
 
     for(var i = 0; i < listItem.length; i++) {
-      listItem[i].addEventListener('click', function(){
-        id = this.getAttribute('data-id');
-        helper.setCurrent(+id);
-        helper.increment();
-        view.updateCount();
+      view.addListener(listItem[i]);
+    }
+  },
+
+  addListener: function(listItem) {
+    listItem[i].addEventListener('click', function(){
+      id = this.getAttribute('data-id');
+      helper.setCurrent(+id);
+      helper.increment();
+      view.updateCount();
       });
     }
   },
@@ -25,7 +30,6 @@ var view = module.exports = {
     var li = document.querySelector('[data-id="' + item.id + '"]');
     var count = li.querySelector('.menu-count');
     count.innerHTML = item.count;
-
   },
 
   showCountdown: function() {

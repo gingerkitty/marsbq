@@ -11,6 +11,7 @@ var autoprefixer = require('gulp-autoprefixer');
 var browserify = require('browserify');
 var source = require('vinyl-source-stream');
 var buffer = require('vinyl-buffer');
+var jshint = require('gulp-jshint');
 
 var menu = require('./menu.json');
 
@@ -57,8 +58,8 @@ gulp.task('scripts', function(){
       .pipe(uglify())
       .pipe(sourcemaps.write('./'))
       .pipe(gulp.dest('dist/scripts'))
-      .pipe(browserSync.stream());      
-})
+      .pipe(browserSync.stream());
+});
 
 
 /* command to watch css files for changes */
@@ -71,7 +72,13 @@ gulp.task('styles', function(){
         .pipe(sourcemaps.write())
         .pipe(gulp.dest('dist/styles'))
         .pipe(browserSync.stream());
-})
+});
+
+gulp.task('lint', function() {
+  return gulp.src('src/scripts/**/*.js')
+  .pipe(jshint())
+  .pipe(jshint.reporter('default'));
+});
 
 gulp.task('default', ['styles', 'images', 'scripts', 'templates'], function(){
     browserSync.init({
