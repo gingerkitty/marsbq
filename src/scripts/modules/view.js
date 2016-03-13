@@ -16,14 +16,13 @@ var view = module.exports = {
   },
 
   addListener: function(listItem) {
-    listItem[i].addEventListener('click', function(){
+    listItem.addEventListener('click', function(){
       id = this.getAttribute('data-id');
       helper.setCurrent(+id);
       helper.increment();
       view.updateCount();
       });
-    }
-  },
+},    
 
   updateCount: function() {
     var item = helper.getCurrent();

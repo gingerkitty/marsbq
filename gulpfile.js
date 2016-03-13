@@ -15,7 +15,7 @@ var jshint = require('gulp-jshint');
 
 var menu = require('./menu.json');
 
-/* command to watch html template files for changes */
+// command to watch html template files for changes
 gulp.task('templates', function(){
     var data = {
         year: new Date().getFullYear(),
@@ -35,7 +35,7 @@ gulp.task('templates', function(){
 })
 
 
-/* command to watch image files for changes */
+// command to watch image files for changes
 gulp.task('images', function(){
     gulp.src(['src/img/**/*'])
         .pipe(imageMin())
@@ -44,7 +44,7 @@ gulp.task('images', function(){
 })
 
 
-/* command to watch script files for changes */
+// command to watch script files for changes
 gulp.task('scripts', function(){
     var b = browserify({
       entries: 'src/scripts/main.js',
@@ -62,7 +62,7 @@ gulp.task('scripts', function(){
 });
 
 
-/* command to watch css files for changes */
+// command to watch css files for changes
 gulp.task('styles', function(){
     gulp.src(['src/styles/main.less'])
         .pipe(sourcemaps.init())
@@ -85,8 +85,8 @@ gulp.task('default', ['styles', 'images', 'scripts', 'templates'], function(){
         server: './'
     });
 
-    /* command to watch folder for json and html for changes */
-    //gulp.watch('src/**/*', browserSync.reload);
+    // command to watch folder for json and html for changes
+    // gulp.watch('src/**/*', browserSync.reload);
     gulp.watch('src/styles/**/*.less', ['styles']);
     gulp.watch('src/img/**/*', ['images']);
     gulp.watch('src/scripts/**/*.js', ['scripts']);
