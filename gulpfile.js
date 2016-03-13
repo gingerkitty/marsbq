@@ -13,6 +13,7 @@ var source = require('vinyl-source-stream');
 var buffer = require('vinyl-buffer');
 var jshint = require('gulp-jshint');
 var mocha = require('gulp-mocha');
+var a11y = require('gulp-a11y');
 
 var menu = require('./menu.json');
 
@@ -86,11 +87,16 @@ gulp.task('test', function() {
     .pipe(mocha())
 });
 
+gulp.task('access', function() {
+  gulp.src('index.html')
+    .pipe(a11y())
+    .pipe(a11y.reporter());
+});
+
 gulp.task('default', ['styles', 'images', 'scripts', 'templates'], function(){
     browserSync.init({
         server: './'
     });
-
     // command to watch folder for json and html for changes
     // gulp.watch('src/**/*', browserSync.reload);
     gulp.watch('src/styles/**/*.less', ['styles']);
@@ -98,5 +104,4 @@ gulp.task('default', ['styles', 'images', 'scripts', 'templates'], function(){
     gulp.watch('src/scripts/**/*.js', ['scripts']);
     gulp.watch('src/templates/**/*.hbs', ['templates']);
     gulp.watch('*.html', browserSync.reload);
-
 });
